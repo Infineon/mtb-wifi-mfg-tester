@@ -7,7 +7,7 @@
 #
 ################################################################################
 # \copyright
-# Copyright 2018-2019 Cypress Semiconductor Corporation
+# Copyright 2020-2021 Cypress Semiconductor Corporation
 # SPDX-License-Identifier: Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,7 +36,7 @@ APPNAME=mtb-anycloud-wifi-mfg-tester
 
 # Name of toolchain to use. Options include:
 #
-# GCC_ARM -- GCC 7.2.1, provided with ModusToolbox IDE
+# GCC_ARM -- GCC 9.3.1, provided with ModusToolbox IDE
 # ARM     -- ARM Compiler (must be installed separately)
 # IAR     -- IAR Compiler (must be installed separately)
 #
@@ -98,7 +98,12 @@ MBEDTLSFLAGS = MBEDTLS_USER_CONFIG_FILE='"configs/mbedtls_user_config.h"'
 
 
 # Add additional defines to the build process (without a leading -D).
-DEFINES=$(MBEDTLSFLAGS) CYBSP_WIFI_CAPABLE WLAN_MFG_FIRMWARE
+DEFINES=$(MBEDTLSFLAGS) CYBSP_WIFI_CAPABLE CY_RTOS_AWARE WLAN_MFG_FIRMWARE
+
+# WiFi Mfg Tester Version
+file := version.txt
+WIFI_MFG_VERSION_STRING :=  $(shell cat ${file})
+DEFINES+=WIFI_MFG_VER=$(WIFI_MFG_VERSION_STRING)
 
 # Control CY_WIFI_HOST_WAKE_SW_FORCE
 ifeq ($(HOST_WAKE),0)

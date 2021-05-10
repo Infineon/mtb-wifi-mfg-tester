@@ -1,10 +1,10 @@
 /*
- * Copyright 2020, Cypress Semiconductor Corporation or a subsidiary of
- * Cypress Semiconductor Corporation. All Rights Reserved.
+ * Copyright 2021, Cypress Semiconductor Corporation (an Infineon company) or
+ * an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
  *
  * This software, including source code, documentation and related
- * materials ("Software"), is owned by Cypress Semiconductor Corporation
- * or one of its subsidiaries ("Cypress") and is protected by and subject to
+ * materials ("Software") is owned by Cypress Semiconductor Corporation
+ * or one of its affiliates ("Cypress") and is protected by and subject to
  * worldwide patent protection (United States and foreign),
  * United States copyright laws and international treaty provisions.
  * Therefore, you may use this Software only as provided in the license
@@ -13,7 +13,7 @@
  * If no EULA applies, Cypress hereby grants you a personal, non-exclusive,
  * non-transferable license to copy, modify, and compile the Software
  * source code solely for use in connection with Cypress's
- * integrated circuit products. Any reproduction, modification, translation,
+ * integrated circuit products.  Any reproduction, modification, translation,
  * compilation, or representation of this Software except as specified
  * above is prohibited without the express written permission of Cypress.
  *
@@ -32,7 +32,7 @@
  */
  /** @file
  *
- * Description: This is the source code for mfg_test App Example in ModusToolbox.
+ * Description: This is the source code for mfg_test app example in ModusToolbox.
  *
  * Related Document: See README.md
   *
@@ -54,13 +54,13 @@
 * Macros
 ******************************************************************************/
 
-/* Task parameters for MfgTest App Task. */
+/* Task parameters for MfgTest app task. */
 #define MFG_TEST_CLIENT_TASK_PRIORITY       (2)
 #define MFG_TEST_CLIENT_TASK_STACK_SIZE     (1024 * 2)
 
 #define WCM_INITIALIZED                  (1lu << 0)
 
-/* Macro to check if the result of an operation was successful  When
+/* Macro to check whether the result of an operation was successful.  When
  * it has failed, print the error message and return EXIT_FAILURE to the
  * calling function.
  */
@@ -74,30 +74,36 @@
                          }                                  \
                      } while(0)
 
+/* Macro to get the Wifi Mfg Tester application version.
+ */
+#define GET_WIFI_MFG_VER(str) #str
+#define GET_WIFI_MFG_STRING(str) GET_WIFI_MFG_VER(str)
+#define GET_WIFI_MFG_VER_STRING  GET_WIFI_MFG_STRING(WIFI_MFG_VER)
+
 /******************************************************************************
-* Function Prototypes
+* Function prototypes
 *******************************************************************************/
 cy_rslt_t cy_wcm_get_whd_interface(cy_wcm_interface_t interface_type, whd_interface_t *whd_iface);
 static void mfg_test_client_task(void *pvParameters);
 
 /******************************************************************************
-* Global Variables
+* Global variables
 ******************************************************************************/
-/* This enables RTOS aware debugging. */
+/* Enables RTOS-aware debugging. */
 volatile int uxTopUsedPriority;
 
 #define IOCTL_MED_LEN   (512)
 static unsigned char buf[IOCTL_MED_LEN] = {0};
 
 /*
- * This is called first after the initialization of FreeRTOS.  It basically connects to WiFi and then starts the
+ * Called first after the initialization of FreeRTOS. It basically connects to Wi-Fi and then starts the
  * task that waits for DHCP.  No tasks will actually run until this function returns.
  */
 void vApplicationDaemonTaskStartupHook()
 {
     printf("Mfg test Application.\r\n");
 
-    /* Create the mfg_test Client task. */
+    /* Create the mfg_test client task. */
     xTaskCreate(mfg_test_client_task, "Mfg-test task", MFG_TEST_CLIENT_TASK_STACK_SIZE,
                 NULL, MFG_TEST_CLIENT_TASK_PRIORITY, NULL);
 
@@ -110,26 +116,28 @@ int main()
 {
     cy_rslt_t result ;
 
-    /* This enables RTOS aware debugging in OpenOCD */
+    /* Enables RTOS-aware debugging in OpenOCD */
     uxTopUsedPriority = configMAX_PRIORITIES - 1;
 
-    /* Initialize the board support package */
+    /* Initializes the board support package */
     result = cybsp_init() ;
     CY_ASSERT(result == CY_RSLT_SUCCESS);
 
-    /* Enable global interrupts */
+    /* Enables global interrupts */
     __enable_irq();
 
-    /* Initialize retarget-io to use the debug UART port */
+    /* Initializes retarget-io to use the debug UART port */
     cy_retarget_io_init(CYBSP_DEBUG_UART_TX, CYBSP_DEBUG_UART_RX, CY_RETARGET_IO_BAUDRATE);
 
-    /* clear the screen */
+    /* Clears the screen */
     printf("\x1b[2J\x1b[;H");
     printf("=============================================\r\n");
     printf("FreeRTOS MfgTest Application\r\n") ;
+    printf("FreeRTOS Version: %s\r\n", tskKERNEL_VERSION_NUMBER);
+    printf("WiFi Mfg Tester : %s\r\n", GET_WIFI_MFG_VER_STRING);
     printf("=============================================\r\n");
 
-    /* Start the FreeRTOS scheduler */
+    /* Starts the FreeRTOS scheduler */
     vTaskStartScheduler() ;
 
     /* Should never get here */
@@ -140,7 +148,7 @@ int main()
  * Function Name: mfg_test_client_task
  ******************************************************************************
  * Summary:
- *  Task for handling initialization & connection of Wi-Fi and the MQTT client.
+ *  Task for handling the initialization and connection of Wi-Fi and the MQTT Client.
  *
  * Parameters:
  *  void *pvParameters : Task parameter defined during task creation (unused)
@@ -155,7 +163,7 @@ static void mfg_test_client_task(void *pvParameters)
     cy_rslt_t result;
     whd_interface_t sta_interface = NULL;
 
-    /* To avoid compiler warnings */
+    /* Avoid compiler warnings */
     (void)pvParameters;
 
     /* Set I/O to No Buffering */
@@ -166,7 +174,7 @@ static void mfg_test_client_task(void *pvParameters)
 
     /* Configure the interface as a Wi-Fi STA (i.e. Client). */
 
-    /* Initialize the Wi-Fi Connection Manager and return if the operation fails. */
+    /* Initialize the Wi-Fi connection manager and return if the operation fails. */
     result = cy_wcm_init(&config);
 
     CHECK_RESULT(result, WCM_INITIALIZED, "\r\nWi-Fi Connection Manager initialization failed!\r\n");
