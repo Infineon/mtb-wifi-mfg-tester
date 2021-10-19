@@ -10,6 +10,11 @@ See the [README.md](./README.md) for a complete description of the application.
 
 ## Changelog
 
+### v3.1.0
+
+- Added the "Wl tool" binary wl4373.exe
+- Added support for [PSoC&trade; PSoC6 Development Kit + Sterling LWB5Plus ](https://www.cypress.com/part/cy8ceval-062s2) (`CY8CEVAL-062S2`) (https://www.mouser.com/new/laird-connectivity/laird-connectivity-sterling-lwb5plus)
+
 ### v3.0.1
 
 - Added support for FreeRTOS version 10.3.1

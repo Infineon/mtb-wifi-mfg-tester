@@ -101,8 +101,8 @@ MBEDTLSFLAGS = MBEDTLS_USER_CONFIG_FILE='"configs/mbedtls_user_config.h"'
 DEFINES=$(MBEDTLSFLAGS) CYBSP_WIFI_CAPABLE CY_RTOS_AWARE WLAN_MFG_FIRMWARE
 
 # WiFi Mfg Tester Version
-file := version.txt
-WIFI_MFG_VERSION_STRING :=  $(shell cat ${file})
+file := version.xml
+WIFI_MFG_VERSION_STRING :=  $(shell sed -e 's/<version>//g' -e 's/<\/version>//g'  ${file})
 DEFINES+=WIFI_MFG_VER=$(WIFI_MFG_VERSION_STRING)
 
 # Control CY_WIFI_HOST_WAKE_SW_FORCE
