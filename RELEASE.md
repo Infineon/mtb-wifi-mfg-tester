@@ -10,6 +10,9 @@ See the [README.md](./README.md) for a complete description of the application.
 
 ## Changelog
 
+### v3.2.0
+
+- Added support for [PSoC&trade; PSoC6 Development Kit](https://www.cypress.com/part/cy8ceval-062s2)(CY8CEVAL-062S2) + [1YN M.2 Module](https://www.embeddedartists.com/products/1yn-m-2-module) (CY8CEVAL-062S2-MUR-43439M2)
 ### v3.1.0
 
 - Added the "Wl tool" binary wl4373.exe
