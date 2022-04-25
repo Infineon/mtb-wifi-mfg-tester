@@ -6,6 +6,11 @@ The Wifi-Mfg-Tester acts as a transport layer between the host "wl tool" and the
 
 The wl tool binaries for testing the WLAN firmware are also included in this application repository.
 
+Wifi-Mfg-Tester v3.3.0:
+
+- Minor compiler warning fixed.
+- Release Mode default in Makefile.
+
 Wifi-Mfg-Tester v3.2.0 adds support for the following:
 
 - [PSoC&trade; PSoC6 Development Kit](https://www.cypress.com/part/cy8ceval-062s2)(CY8CEVAL-062S2) + [1YN M.2 Module](https://www.embeddedartists.com/products/1yn-m-2-module) (CY8CEVAL-062S2-MUR-43439M2)

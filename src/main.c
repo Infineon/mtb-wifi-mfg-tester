@@ -1,5 +1,5 @@
 /*
- * Copyright 2021, Cypress Semiconductor Corporation (an Infineon company) or
+ * Copyright 2022, Cypress Semiconductor Corporation (an Infineon company) or
  * an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
  *
  * This software, including source code, documentation and related
@@ -123,6 +123,9 @@ int main()
     result = cybsp_init() ;
     CY_ASSERT(result == CY_RSLT_SUCCESS);
 
+    /* Dummy read to avoid warning for Release build */
+    (void) result;
+
     /* Enables global interrupts */
     __enable_irq();
 
@@ -195,8 +198,7 @@ static void mfg_test_client_task(void *pvParameters)
         wl_remote_command_handler( buf);
     }
 
-    /* Cleanup section for various operations. */
-    vTaskDelete( NULL );
+    /* Should never get here */
 }
 
 /* [] END OF FILE */
