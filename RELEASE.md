@@ -10,6 +10,11 @@ See the [README.md](./README.md) for a complete description of the application.
 
 ## Changelog
 
+### v4.0.0
+
+- MTB 3.0 Compatible application.
+- BSP 4.X Compatible Targets.
+
 ### v3.3.0
 
 - Minor compiler warning fixed.

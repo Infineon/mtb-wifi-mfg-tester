@@ -6,6 +6,12 @@ The Wifi-Mfg-Tester acts as a transport layer between the host "wl tool" and the
 
 The wl tool binaries for testing the WLAN firmware are also included in this application repository.
 
+Wifi-Mfg-Tester v4.0.0:
+
+- Makefile and other changes to make it Compatible with MTB 3.0
+- BSP 4.X Targets required for the applications
+- This version of application is not backward compatible with MTB 2.4
+
 Wifi-Mfg-Tester v3.3.0:
 
 - Minor compiler warning fixed.

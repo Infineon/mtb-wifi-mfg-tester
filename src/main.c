@@ -46,7 +46,8 @@
 #include "task.h"
 
 #include "cy_wcm.h"
-#include "cy_lwip.h"
+#include "whd.h"
+#include "cy_network_mw_core.h"
 
 #include "mfg_test_common_api.h"
 
@@ -67,7 +68,7 @@
 #define CHECK_RESULT(result, init_mask, error_message...)   \
                      do                                     \
                      {                                      \
-                         if ((int)result != EXIT_SUCCESS)   \
+                         if ((int)result != CY_RSLT_SUCCESS)   \
                          {                                  \
                              printf(error_message);         \
                              return;                        \

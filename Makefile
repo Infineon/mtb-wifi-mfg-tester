@@ -27,6 +27,7 @@
 ################################################################################
 # Basic Configuration
 ################################################################################
+MTB_TYPE=COMBINED
 
 # Target board/hardware
 TARGET=CY8CPROTO-062-4343W
@@ -69,18 +70,6 @@ VERBOSE=
 #
 COMPONENTS=FREERTOS PSOC6HAL LWIP MBEDTLS WCM SECURE_SOCKETS
 
-ifeq ($(TARGET),CY8CKIT-062S2-43012)
-COMPONENTS += 43012 CY8CMOD_062S2_43012 MBEDTLS
-endif
-
-ifeq ($(TARGET),CY8CKIT-062-WIFI-BT)
-COMPONENTS += 4343W CY8CKIT_062_WIFI_BT MBEDTLS
-endif
-
-ifeq ($(TARGET),CY8CPROTO-062-4343W)
-COMPONENTS += 4343W CY8CPROTO_062_4343W MBEDTLS
-endif
-
 # Like COMPONENTS, but disable optional code that was enabled by default.
 DISABLE_COMPONENTS=
 
@@ -92,7 +81,7 @@ SOURCES=
 
 # Like SOURCES, but for include directories. Value should be paths to
 # directories (without a leading -I).
-INCLUDES=
+INCLUDES=./configs
 
 MBEDTLSFLAGS = MBEDTLS_USER_CONFIG_FILE='"configs/mbedtls_user_config.h"'
 
