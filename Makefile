@@ -33,7 +33,7 @@ MTB_TYPE=COMBINED
 TARGET=CY8CPROTO-062-4343W
 
 # Name of application (used to derive name of final linked file).
-APPNAME=mtb-anycloud-wifi-mfg-tester
+APPNAME=mtb-wifi-mfg-tester
 
 # Name of toolchain to use. Options include:
 #

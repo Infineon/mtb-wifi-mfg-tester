@@ -6,49 +6,29 @@ The Wifi-Mfg-Tester acts as a transport layer between the host "wl tool" and the
 
 The wl tool binaries for testing the WLAN firmware are also included in this application repository.
 
-Wifi-Mfg-Tester v4.0.0:
-
-- Makefile and other changes to make it Compatible with MTB 3.0
-- BSP 4.X Targets required for the applications
-- This version of application is not backward compatible with MTB 2.4
-
-Wifi-Mfg-Tester v3.3.0:
-
-- Minor compiler warning fixed.
-- Release Mode default in Makefile.
-
-Wifi-Mfg-Tester v3.2.0 adds support for the following:
-
-- [PSoC&trade; PSoC6 Development Kit](https://www.cypress.com/part/cy8ceval-062s2)(CY8CEVAL-062S2) + [1YN M.2 Module](https://www.embeddedartists.com/products/1yn-m-2-module) (CY8CEVAL-062S2-MUR-43439M2)
-
-Wifi-Mfg-Tester v3.1.0 adds support for the following:
-
-- [PSoC&trade; PSoC6 Development Kit + Sterling LWB5Plus ](https://www.cypress.com/part/cy8ceval-062s2) (`CY8CEVAL-062S2`) (https://www.mouser.com/new/laird-connectivity/laird-connectivity-sterling-lwb5plus)
-
-Wifi-Mfg-Tester v3.0.1 adds support for the following:
-
-- [PSoC&trade; 64 "Secure Boot" Wi-Fi Bluetooth&reg; -  pioneer kit (CY8CKIT-064B0S2-4343W)](https://www.cypress.com/CY8CKIT-064B0S2-4343W)
-- [ModusToolbox™ software](https://www.cypress.com/products/modustoolbox-software-environment) v2.3
-- FreeRTOS v 10.3.1
-- Arm&reg; C v6.14.1 toolchain
-
 ## Requirements
-- [ModusToolbox™ software](https://www.cypress.com/products/modustoolbox-software-environment) v2.2
+- [ModusToolbox&trade; software](https://www.infineon.com/cms/en/design-support/tools/sdk/modustoolbox-software/)
 - Programming Language: C
-- Supported Toolchains: Arm® GCC (v9.3.1), IAR (v8.42)
-- Associated Parts: All [PSoC&trade; 6 MCU](http://www.cypress.com/PSoC6) parts
+- Supported Toolchains: Arm® (v6.16), GCC (v11.3), IAR (v9.40)
+- Associated parts: All [PSoC&trade; 6 MCU](https://www.infineon.com/cms/en/product/microcontroller/32-bit-psoc-arm-cortex-microcontroller/psoc-6-32-bit-arm-cortex-m4-mcu/) parts
 
 ## Dependent assets
-- [Wi-Fi connection manager](https://github.com/cypresssemiconductorco/wifi-connection-manager)
-- [Wi-Fi manufacturing test library](https://github.com/cypresssemiconductorco/wifi-mfg-test)
-
+- [Wi-Fi connection manager](https://github.com/Infineon/wifi-connection-manager)
+- [Wi-Fi manufacturing test library](https://github.com/Infineon/wifi-mfg-test)
 
 ## Validated kits
-- [PSoC&trade; 6 Wi-Fi Bluetooth&reg; prototyping kit](https://www.cypress.com/CY8CPROTO-062-4343W) (`CY8CPROTO-062-4343W`) - Default target
-- [PSoC&trade; 62S2 Wi-Fi Bluetooth&reg; pioneer kit](https://www.cypress.com/CY8CKIT-062S2-43012) - (`CY8CKIT-062S2-43012`)
-- [PSoC&trade; 6 Wi-Fi Bluetooth&reg; pioneer kit](https://www.cypress.com/CY8CKIT-062-WIFI-BT) - (`CY8CKIT-062-WIFI-BT`)
-- [PSoC&trade; 62S1 Wi-Fi Bluetooth&reg; pioneer kit](https://www.cypress.com/CYW9P62S1-43438EVB-01) - (`CYW9P62S1-43438EVB-01`)
-- [PSoC&trade; 64 "Secure Boot" Wi-Fi Bluetooth&reg; pioneer kit](https://www.cypress.com/CY8CKIT-064B0S2-4343W) - (`CY8CKIT-064B0S2-4343W`)
+- [PSoC&trade; 6 Wi-Fi Bluetooth&reg; prototyping kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8cproto-062-4343w/) (`CY8CPROTO-062-4343W`) - Default target
+- [PSoC&trade; 62S2 Wi-Fi Bluetooth&reg; pioneer kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-43012/) (`CY8CKIT-062S2-43012`)
+- [PSoC&trade; 6 Wi-Fi Bluetooth&reg; pioneer kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062-wifi-bt/) (`CY8CKIT-062-WIFI-BT`)
+- [PSoC&trade; 62S1 Wi-Fi Bluetooth&reg; pioneer kit](https://www.infineon.com/dgdl/Infineon-CYW9P62S1-43438EVB-01_PSoC_62S1_Wi-Fi_BT_Pioneer_Kit_Guide-UserManual-v01_00-EN.pdf?fileId=8ac78c8c7d0d8da4017d0f0208491962) (`CYW9P62S1-43438EVB-01`)
+- [PSoC&trade; 64 "Secure Boot" Wi-Fi Bluetooth&reg; pioneer kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-064b0s2-4343w/) (`CY8CKIT-064B0S2-4343W`)
+- [PSoC&trade; 62S2 Wi-Fi Bluetooth&reg; prototyping kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8cproto-062s2-43439/) (`CY8CPROTO-062S2-43439`)
+- [PSoC&trade; 62S2 evaluation kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ceval-062s2/) (`CY8CEVAL-062S2-LAI-43439M2`)
+- [PSoC&trade; 62S2 evaluation kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ceval-062s2/) (`CY8CEVAL-062S2-MUR-43439M2`)
+- [PSoC&trade; 62S2 evaluation kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ceval-062s2/) (`CY8CEVAL-062S2-LAI-4373M2`)
+- [PSoC&trade; 62S2 evaluation kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ceval-062s2/) (`CY8CEVAL-062S2-MUR-4373M2`)
+- [PSoC&trade; 62S2 evaluation kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ceval-062s2/) (`CY8CEVAL-062S2-MUR-4373EM2`)
+- [PSoC&trade; 62S2 evaluation kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ceval-062s2/) (`CY8CEVAL-062S2-CYW43022CUB`)
 
 ## Hardware setup
 
@@ -58,7 +38,7 @@ The application running on a PSoC&trade; 6 MCU kit and the test setup are shown 
 
 ![](images/mfg-test-setup.png)
 
-**Note:** The PSoC&trade; 6 Bluetooth&reg; LE pioneer kit (CY8CKIT-062-BLE) and the PSoC&trade; 6 Wi-Fi Bluetooth&reg; pioneer kit (CY8CKIT-062-WIFI-BT) ship with KitProg2 installed. ModusToolbox software requires KitProg3. Before using this application, make sure that the board is upgraded to KitProg3. The tool and instructions are available in the Firmware Loader GitHub repository. If you do not upgrade, you will see an error like "unable to find CMSIS-DAP device" or "KitProg firmware is out of date".
+**Note:** The [PSoC&trade; 6 Bluetooth&reg; LE pioneer kit (CY8CKIT-062-BLE)](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062-ble/) and the [PSoC&trade; 6 Wi-Fi Bluetooth&reg; pioneer kit (CY8CKIT-062-WIFI-BT)](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062-wifi-bt/) ship with KitProg2 installed. ModusToolbox software requires KitProg3. Before using this application, make sure that the board is upgraded to KitProg3. The tool and instructions are available in the Firmware Loader GitHub repository. If you do not upgrade, you will see an error like "unable to find CMSIS-DAP device" or "KitProg firmware is out of date".
 
 
 ## Software setup
@@ -112,10 +92,10 @@ Argument | Description | Required/optional
 `--user-app-name`| Specify the name of the application if you prefer to have a name other than the example's default name | Optional
 
 
-The following example will clone the "[Wifi Mfg Tester](https://github.com/Infineon/mtb-anycloud-wifi-mfg-tester)" application with the desired name "MyWifiMfgTester" configured for the *CY8CKIT-062-WIFI-BT* BSP into the specified working directory, *C:/mtb_projects*:
+The following example will clone the "[Wifi Mfg Tester](https://github.com/Infineon/mtb-wifi-mfg-tester)" application with the desired name "MyWifiMfgTester" configured for the *CY8CKIT-062-WIFI-BT* BSP into the specified working directory, *C:/mtb_projects*:
 
    ```
-   project-creator-cli --board-id CY8CKIT-062-WIFI-BT --app-id mtb-anycloud-wifi-mfg-tester --user-app-name MyWifiMfgTester --target-dir "C:/mtb_projects"
+   project-creator-cli --board-id CY8CKIT-062-WIFI-BT --app-id mtb-wifi-mfg-tester --user-app-name MyWifiMfgTester --target-dir "C:/mtb_projects"
    ```
 
 **Note:** The project-creator-cli tool uses the `git clone` and `make getlibs` commands to fetch the repository and import the required libraries. For more details, see the "Project creator tools" section of the [ModusToolbox&trade; software user guide](https://www.cypress.com/ModusToolboxUserGuide) (locally available at *{ModusToolbox&trade; install directory}/docs_{version}/mtb_user_guide.pdf*).
@@ -208,7 +188,7 @@ For a list of supported IDEs and more details, see the "Exporting to IDEs" secti
 		reboot  Reboot platform
 
    ```
-**Note:** For targets based on [PSoC™ 6 MCU with AIROC™ CYW4343W Wi-Fi & Bluetooth® combo chip](https://www.cypress.com/documentation/datasheets/cyw4343w-single-chip-80211-bgn-macbasebandradio-bluetooth-51) and [PSoC™ 6 MCU with AIROC™ CYW43438 Wi-Fi & Bluetooth® combo chip](https://www.cypress.com/documentation/datasheets/cyw43438-single-chip-ieee-80211-bgn-macbasebandradio-integrated-bluetooth), use the WL tool: `wl4343X.exe`.
+**Note:** For targets based on [PSoC™ 6 MCU with AIROC™ CYW4343W Wi-Fi & Bluetooth® combo chip](https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-wi-fi-plus-bluetooth-combos/wi-fi-4-802.11n/cyw4343w/) and [PSoC™ 6 MCU with AIROC™ CYW43438 Wi-Fi & Bluetooth® combo chip](https://www.infineon.com/cms/en/product/wireless-connectivity/airoc-wi-fi-plus-bluetooth-combos/wi-fi-4-802.11n/cyw43438/), use the WL tool: `wl4343X.exe`.
 
 ------
 
